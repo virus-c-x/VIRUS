@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VIRUS - Home</title>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-    body { background-color: #0e0e0e; color: #fff; }
-
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #0e0e0e;
+      color: #fff;
+    }
     header {
       display: flex; justify-content: space-between; align-items: center;
       padding: 20px 50px;
       background: #0e0e0e;
       position: sticky; top: 0; z-index: 1000;
     }
-    header img { height: 50px; }
+    header img {
+      height: 50px;
+    }
     nav a {
       margin-left: 25px;
       text-decoration: none;
@@ -24,28 +32,42 @@
       font-weight: 500;
       transition: 0.3s;
     }
-    nav a:hover { color: #a259ff; }
+    nav a:hover {
+      color: #a259ff;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-    section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-
+    /* قسم الهيرو - الصورة الكبيرة تحت الشعار */
     .hero {
       text-align: center;
     }
     .hero img {
-      width: 120px;
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
       margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px #a259ff);
     }
     .hero h1 {
       font-size: 48px;
       color: #a259ff;
+      margin-top: 10px;
     }
 
+    /* قسم عنّي */
     .about {
       display: flex; flex-wrap: wrap; align-items: center; gap: 40px;
       justify-content: center; text-align: left;
     }
     .about img {
-      width: 250px; border-radius: 16px; filter: grayscale(100%);
+      width: 250px;
+      border-radius: 16px;
+      filter: grayscale(0);
+      box-shadow: 0 0 15px #a259ff;
     }
     .about-text {
       max-width: 500px;
@@ -60,6 +82,7 @@
       color: #ddd;
     }
 
+    /* قسم الخدمات */
     .services {
       text-align: center;
     }
@@ -81,8 +104,13 @@
       background: #1a1a1a;
       padding: 20px;
       border-radius: 12px;
+      transition: 0.3s;
+    }
+    .service:hover {
+      background: #2d0e49;
     }
 
+    /* قسم المميزات */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -103,6 +131,7 @@
       margin-bottom: 10px;
     }
 
+    /* قسم الدفع */
     .payments {
       text-align: center;
     }
@@ -112,11 +141,13 @@
     }
     .payment-logos img {
       height: 50px;
-      filter: grayscale(1); opacity: 0.7;
+      filter: grayscale(1);
+      opacity: 0.7;
       transition: 0.3s;
     }
     .payment-logos img:hover {
-      filter: none; opacity: 1;
+      filter: none;
+      opacity: 1;
     }
 
     footer {
@@ -129,9 +160,9 @@
   </style>
 </head>
 <body>
-
   <header>
-    <img src="assets/img/logo.png" alt="VIRUS Logo">
+    <!-- شعار الموقع -->
+    <img src="assets/img/Picsart_25-07-17_01-18-23-847.png" alt="VIRUS Logo" />
     <nav>
       <a href="#about">عنّي</a>
       <a href="#brand">الخدمات</a>
@@ -140,22 +171,25 @@
     </nav>
   </header>
 
+  <!-- قسم الهيرو (البانر) -->
   <section class="hero" data-aos="zoom-in">
-    <img src="assets/img/logo.png" alt="VIRUS Logo">
+    <img src="assets/img/Picsart_25-07-16_21-37-09-069.jpg" alt="بانر VIRUS" />
     <h1>VIRUS</h1>
   </section>
 
+  <!-- قسم عنّي -->
   <section id="about" class="about" data-aos="fade-up">
-    <img src="assets/img/profile.png" alt="Othmane">
+    <img src="assets/img/file_000000000b78620aa8ff9aa8cb31260d.png" alt="Othmane" />
     <div class="about-text">
       <h2>Othmane</h2>
       <p>مصمم جرافيك ومطور مواقع، أساعد العلامات التجارية على بناء هوية رقمية قوية واحترافية من خلال تصاميم عصرية، باقات مميزة، وتجربة عمل موثوقة وسريعة.</p>
     </div>
   </section>
 
+  <!-- قسم الخدمات -->
   <section id="brand" class="services" data-aos="fade-up">
     <h2>خدمات VIRUS</h2>
-    <img src="assets/img/logo.png" alt="Logo" />
+    <img src="assets/img/Picsart_25-07-17_01-18-23-847.png" alt="Logo" />
     <div class="services-grid">
       <div class="service">تصميم شعارات احترافية</div>
       <div class="service">تصميم بنرات إعلانية</div>
@@ -164,6 +198,7 @@
     </div>
   </section>
 
+  <!-- قسم الامتيازات -->
   <section id="features" class="features" data-aos="fade-up">
     <div class="feature">
       <h3>⚡ السرعة</h3>
@@ -183,6 +218,7 @@
     </div>
   </section>
 
+  <!-- قسم الدفع -->
   <section id="payment" class="payments" data-aos="fade-up">
     <h2>طرق الدفع</h2>
     <div class="payment-logos">
