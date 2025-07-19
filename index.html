@@ -1,101 +1,125 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virus Studio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #1a001f, #000);
-      color: #fff;
-    }
-    header {
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hero {
-      text-align: center;
-      padding: 100px 20px 50px;
-      background: radial-gradient(circle, #a100ff33, #000);
-    }
-    .hero h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      font-size: 1.1em;
-      opacity: 0.8;
-    }
-    .hero button {
-      padding: 10px 25px;
-      font-size: 1em;
-      background: #a100ff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .logos {
-      margin: 50px auto;
-      text-align: center;
-    }
-    .logos img {
-      width: 80px;
-      margin: 10px;
-      opacity: 0.7;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #0d0011;
-      color: #aaa;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIRUS | الصفحة الرئيسية</title>
+    <style>
+        /* الخطوط */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+        
+        /* الألوان */
+        :root {
+            --purple-light: #C77DFF;
+            --purple-dark: #5A00CC;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+        
+        /* التنسيق العام */
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* الهيدر */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--black);
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--purple-light);
+        }
+        
+        .cta-button {
+            background-color: var(--purple-dark);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        /* قسم الصورة والتعريف */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            gap: 30px;
+            background: linear-gradient(to right, var(--black), var(--purple-dark));
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--purple-light);
+            object-fit: cover;
+        }
+        
+        .profile-text h1 {
+            color: var(--purple-light);
+            font-size: 2rem;
+        }
+        
+        /* باقي الأقسام */
+        section {
+            padding: 40px;
+            border-bottom: 1px solid var(--purple-light);
+        }
+        
+        .section-title {
+            color: var(--purple-light);
+            font-size: 1.8rem;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div><strong>Virus Studio</strong></div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Prices</a>
-      <a href="#">Packages</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>  <section class="hero">
-    <p>Simplify your workflow</p>
-    <h1>Enhance your creative control with Virus Studio</h1>
-    <p>
-      Build your personal brand with our stunning graphic design and digital solutions. Perfect for creators, shops, and entrepreneurs.
-    </p>
-    <button>Get Started</button>
-  </section>  <section class="logos">
-    <p>Trusted by</p>
-    <div>
-      <img src="https://via.placeholder.com/80" alt="Logo" />
-      <img src="https://via.placeholder.com/80" alt="Logo" />
-      <img src="https://via.placeholder.com/80" alt="Logo" />
-      <img src="https://via.placeholder.com/80" alt="Logo" />
-    </div>
-  </section>  <footer>
-    Contact us: viirusshop@gmail.com | Instagram: @othmane_c_x | Phone: 0779505961
-    <br/>
-    &copy; 2025 Virus Studio. All rights reserved.
-  </footer>
+    <!-- الهيدر -->
+    <header>
+        <button class="cta-button">تواصل معنا</button>
+    </header>
+    
+    <!-- قسم الصورة والتعريف -->
+    <section class="profile-section">
+        <img src="profile.jpg" alt="صورتي الشخصية" class="profile-image">
+        <div class="profile-text">
+            <h1>مرحباً، أنا [اسمك]</h1>
+            <p>[نبذة مختصرة عنك في 3-5 أسطر]</p>
+            <p>[وصف مختصر لمجالك وخبراتك]</p>
+        </div>
+    </section>
+    
+    <!-- العرض الرئيسي -->
+    <section>
+        <h2 class="section-title">خدماتنا</h2>
+        <p>[وصف قصير للقيمة التي تقدمها]</p>
+    </section>
+    
+    <!-- المزايا -->
+    <section>
+        <h2 class="section-title">كيف نستطيع مساعدتك؟</h2>
+        <ul>
+            <li>[فائدة 1]</li>
+            <li>[فائدة 2]</li>
+            <li>[فائدة 3]</li>
+        </ul>
+    </section>
+    
+    <!-- دعوة للعمل -->
+    <section style="text-align: center;">
+        <h2 class="section-title">جاهز للبدء؟</h2>
+        <button class="cta-button" style="padding: 15px 30px; font-size: 1.2rem;">ابدأ الآن</button>
+    </section>
+    
+    <!-- الفوتر -->
+    <footer style="text-align: center; padding: 20px; background-color: var(--purple-dark);">
+        <p>© 2023 VIRUS. جميع الحقوق محفوظة</p>
+    </footer>
 </body>
 </html>
