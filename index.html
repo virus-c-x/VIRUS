@@ -1,125 +1,136 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIRUS | الصفحة الرئيسية</title>
-    <style>
-        /* الخطوط */
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
-        
-        /* الألوان */
-        :root {
-            --purple-light: #C77DFF;
-            --purple-dark: #5A00CC;
-            --black: #000000;
-            --white: #FFFFFF;
-        }
-        
-        /* التنسيق العام */
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--black);
-            color: var(--white);
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* الهيدر */
-        header {
-            position: sticky;
-            top: 0;
-            background-color: var(--black);
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--purple-light);
-        }
-        
-        .cta-button {
-            background-color: var(--purple-dark);
-            color: var(--white);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        /* قسم الصورة والتعريف */
-        .profile-section {
-            display: flex;
-            align-items: center;
-            padding: 40px;
-            gap: 30px;
-            background: linear-gradient(to right, var(--black), var(--purple-dark));
-        }
-        
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--purple-light);
-            object-fit: cover;
-        }
-        
-        .profile-text h1 {
-            color: var(--purple-light);
-            font-size: 2rem;
-        }
-        
-        /* باقي الأقسام */
-        section {
-            padding: 40px;
-            border-bottom: 1px solid var(--purple-light);
-        }
-        
-        .section-title {
-            color: var(--purple-light);
-            font-size: 1.8rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VIRUS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: #ffffff; color: #1e1e1e; }
+    
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 50px;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 900;
+      color: #8e44ad;
+    }
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #5c5c5c;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    nav a:hover {
+      color: #8e44ad;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(120deg, #8e44ad, #9b59b6);
+      color: white;
+    }
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #f0eafc;
+      margin-bottom: 40px;
+    }
+    .hero button {
+      background: #fff;
+      color: #8e44ad;
+      border: none;
+      padding: 14px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero button:hover {
+      background: #dcd0f7;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 80px 40px;
+      background-color: #fff;
+    }
+    .feature {
+      background: #f7f1fc;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .feature:hover {
+      box-shadow: 0 4px 20px rgba(142, 68, 173, 0.2);
+    }
+    .feature h3 {
+      font-size: 20px;
+      color: #8e44ad;
+      margin-bottom: 12px;
+    }
+    .feature p {
+      font-size: 15px;
+      color: #5c5c5c;
+    }
+
+    footer {
+      background: #1e1e1e;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+    }
+  </style>
 </head>
 <body>
-    <!-- الهيدر -->
-    <header>
-        <button class="cta-button">تواصل معنا</button>
-    </header>
-    
-    <!-- قسم الصورة والتعريف -->
-    <section class="profile-section">
-        <img src="profile.jpg" alt="صورتي الشخصية" class="profile-image">
-        <div class="profile-text">
-            <h1>مرحباً، أنا [اسمك]</h1>
-            <p>[نبذة مختصرة عنك في 3-5 أسطر]</p>
-            <p>[وصف مختصر لمجالك وخبراتك]</p>
-        </div>
-    </section>
-    
-    <!-- العرض الرئيسي -->
-    <section>
-        <h2 class="section-title">خدماتنا</h2>
-        <p>[وصف قصير للقيمة التي تقدمها]</p>
-    </section>
-    
-    <!-- المزايا -->
-    <section>
-        <h2 class="section-title">كيف نستطيع مساعدتك؟</h2>
-        <ul>
-            <li>[فائدة 1]</li>
-            <li>[فائدة 2]</li>
-            <li>[فائدة 3]</li>
-        </ul>
-    </section>
-    
-    <!-- دعوة للعمل -->
-    <section style="text-align: center;">
-        <h2 class="section-title">جاهز للبدء؟</h2>
-        <button class="cta-button" style="padding: 15px 30px; font-size: 1.2rem;">ابدأ الآن</button>
-    </section>
-    
-    <!-- الفوتر -->
-    <footer style="text-align: center; padding: 20px; background-color: var(--purple-dark);">
-        <p>© 2023 VIRUS. جميع الحقوق محفوظة</p>
-    </footer>
+
+  <header>
+    <h1>VIRUS</h1>
+    <nav>
+      <a href="#">Product</a>
+      <a href="#">Features</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Power Up Your Brand Assets</h2>
+    <p>VIRUS helps teams automate design delivery with modern tools and style systems.</p>
+    <button>Start Now</button>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Design Tokens</h3>
+      <p>Organize and sync your brand values across platforms.</p>
+    </div>
+    <div class="feature">
+      <h3>Real-time Updates</h3>
+      <p>Push changes instantly to your dev team or product.</p>
+    </div>
+    <div class="feature">
+      <h3>Smart Automation</h3>
+      <p>Integrate seamlessly with GitHub, Figma, and APIs.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 VIRUS. All rights reserved.
+  </footer>
+
 </body>
 </html>
