@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f0ff; /* Light purple background */
+      color: #4b0082; /* Dark purple text */
+      direction: rtl;
+      padding: 20px;
+    }
+    h1 {
+      color: #6a0dad; /* Bright purple */
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6a0dad;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="prices.html">Prices</a>
+    <a href="packages.html">Packages</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <h1>Welcome to my website!</h1>
+  <p>I am OTHMANE, Creative Graphic Designer & Web Developer
+Delivering high-quality logos, banners, social media visuals, and full branding solutions.
+Specialized in crafting websites and digital bots tailored to your business needs.
+Helping brands stand out with unique and effective digital designs.</p>
+  <p>Feel free to browse the site to learn more
