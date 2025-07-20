@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.3s ease;
 }
 
+/* الخطوط والخلفية */
 body {
   font-family: 'Inter', sans-serif;
   background: #000000;
@@ -14,127 +13,81 @@ body {
   overflow-x: hidden;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: rgba(10, 5, 20, 0.5);
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #a855f7, #6d28d9);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #9333ea, #5b21b6);
-}
-
-/* Header Bar */
+/* الهيدر: الشعار والوسط والقائمة */
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background: linear-gradient(180deg, #8D00FF 0%, #01010B 100%);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #8D00FF, #01010B);
+  padding: 10px 30px;
+  height: 120px;
 }
 
-/* Logo left and center */
-.logo-left img,
-.logo-center img {
-  height: 50px;
+/* شعار اليسار */
+header .logo-left img {
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 
-/* Navigation toggle button */
-.bar {
-  display: block;
-  position: relative;
+/* الصورة في الوسط */
+header .logo-center img {
+  width: 300px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* أيقونة التنقل (قائمة الهامبرغر) */
+header .nav-toggle {
   cursor: pointer;
   width: 50px;
   height: 40px;
+  position: relative;
 }
 
-.bar span {
+header .nav-toggle span {
   position: absolute;
   width: 45px;
   height: 7px;
   background: #01010B;
   border-radius: 100px;
-  display: inline-block;
+  display: block;
   transition: 0.3s ease;
   left: 0;
 }
 
-.bar span.top {
+header .nav-toggle span.top {
   top: 0;
 }
 
-.bar span.middle {
+header .nav-toggle span.middle {
   top: 17px;
 }
 
-.bar span.bottom {
+header .nav-toggle span.bottom {
   bottom: 0;
 }
 
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  display: none;
-  visibility: hidden;
-}
-
-input[type="checkbox"]:checked ~ .bar span.top {
-  transform: rotate(45deg);
-  transform-origin: top left;
-  width: 48px;
-  left: 5px;
-}
-
-input[type="checkbox"]:checked ~ .bar span.bottom {
-  transform: rotate(-45deg);
-  transform-origin: top left;
-  width: 48px;
-  bottom: -1px;
-  box-shadow: 0 0 10px #495057;
-}
-
-input[type="checkbox"]:checked ~ .bar span.middle {
-  transform: translateX(-20px);
-  opacity: 0;
-}
-
-/* Banner */
+/* البنر fullscreen */
 .banner {
-  margin-top: 70px; /* because header fixed */
   width: 100vw;
-  height: 100vh;
-  background: url('./banner.jpg') no-repeat center center/cover;
-  position: relative;
+  height: 1087px;
+  background: url('./banner.jpg') no-repeat center center;
+  background-size: cover;
 }
 
-/* Moving text "othmane" */
-.marquee-container {
-  position: absolute;
-  top: 50%;
-  left: 100%;
+/* الخط المتحرك كلمة "othmane" فوق البنر */
+.marquee {
   width: 100%;
-  white-space: nowrap;
   overflow: hidden;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.marquee-text {
-  display: inline-block;
+  white-space: nowrap;
+  background-color: transparent;
+  position: relative;
+  top: -40px; /* فوق البنر مباشرة */
+  color: white;
   font-size: 3rem;
   font-weight: bold;
-  color: #8D00FF;
   animation: marquee 10s linear infinite;
-  user-select: none;
 }
 
 @keyframes marquee {
@@ -142,105 +95,57 @@ input[type="checkbox"]:checked ~ .bar span.middle {
   100% { transform: translateX(-100%); }
 }
 
-/* Gradient background below banner */
-.gradient-bg {
-  background: linear-gradient(180deg, #01010B 0%, #8D00FF 100%);
-  padding: 30px 20px;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-/* Profile image with glass effect */
-.profile-image {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
+/* الخلفية المدرجة مع صورة ونبذة */
+.background-section {
+  background: linear-gradient(to bottom, #01010B, #8D00FF);
   background-image: url('./virusname.png');
-  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-}
-
-/* About me text */
-.about-me {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
-/* Guarantees Section */
-.guarantees {
-  margin: 40px auto;
-  max-width: 900px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  color: white;
+  background-size: contain;
+  padding: 80px 20px;
   text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  min-height: 400px;
+}
+
+/* قسم الضمانات (ثقة، سرعة، أمان، جودة) */
+.guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 60px 0 40px 0;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .guarantee-item {
+  flex: 1 1 45%;
+  max-width: 45%;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 12px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 10px rgba(141, 0, 255, 0.5);
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-/* Services Section */
-.services {
-  max-width: 900px;
-  margin: 50px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 25px;
-}
-
-.service-item {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 10px rgba(141, 0, 255, 0.5);
-  flex: 1 1 200px;
-  min-width: 200px;
   text-align: center;
   font-weight: 600;
+  font-size: 1.3rem;
+  box-shadow: 0 0 15px #8D00FF;
 }
 
-/* Payment Methods Section */
-.payments {
-  max-width: 900px;
-  margin: 50px auto 100px auto;
+/* الصور 4 في صف واحد */
+.images-row {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 40px;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1024px;
+  margin: 40px auto 80px auto;
 }
 
-.payment-method img {
-  max-height: 50px;
-  filter: drop-shadow(0 0 3px rgba(141, 0, 255, 0.8));
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .guarantees {
-    grid-template-columns: 1fr;
-  }
-  .services {
-    flex-direction: column;
-    align-items: center;
-  }
-  .payments {
-    flex-direction: column;
-  }
+.images-row img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 20px #8D00FF;
 }
