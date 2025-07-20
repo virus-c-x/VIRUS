@@ -1,151 +1,37 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #8D00FF, #01010B);
+    padding: 10px 20px;
 }
 
-/* الخطوط والخلفية */
-body {
-  font-family: 'Inter', sans-serif;
-  background: #000000;
-  color: white;
-  overflow-x: hidden;
+/* ضبط حجم الشعار في اليسار */
+.header-left .logo {
+    max-width: 100px;
+    max-height: 100px;
 }
 
-/* الهيدر: الشعار والوسط والقائمة */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to bottom, #8D00FF, #01010B);
-  padding: 10px 30px;
-  height: 120px;
+/* ضبط حجم الصورة المركزية */
+.header-center .virus-name {
+    max-width: 300px;
+    max-height: 100px;
 }
 
-/* شعار اليسار */
-header .logo-left img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+/* تنسيق زر القائمة الهامبرغر */
+.menu-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* الصورة في الوسط */
-header .logo-center img {
-  width: 300px;
-  height: 100px;
-  object-fit: contain;
-}
-
-/* أيقونة التنقل (قائمة الهامبرغر) */
-header .nav-toggle {
-  cursor: pointer;
-  width: 50px;
-  height: 40px;
-  position: relative;
-}
-
-header .nav-toggle span {
-  position: absolute;
-  width: 45px;
-  height: 7px;
-  background: #01010B;
-  border-radius: 100px;
-  display: block;
-  transition: 0.3s ease;
-  left: 0;
-}
-
-header .nav-toggle span.top {
-  top: 0;
-}
-
-header .nav-toggle span.middle {
-  top: 17px;
-}
-
-header .nav-toggle span.bottom {
-  bottom: 0;
-}
-
-/* البنر fullscreen */
-.banner {
-  width: 100vw;
-  height: 1087px;
-  background: url('./banner.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-/* الخط المتحرك كلمة "othmane" فوق البنر */
-.marquee {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: transparent;
-  position: relative;
-  top: -40px; /* فوق البنر مباشرة */
-  color: white;
-  font-size: 3rem;
-  font-weight: bold;
-  animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-/* الخلفية المدرجة مع صورة ونبذة */
-.background-section {
-  background: linear-gradient(to bottom, #01010B, #8D00FF);
-  background-image: url('./virusname.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  padding: 80px 20px;
-  text-align: center;
-  color: white;
-  font-size: 1.2rem;
-  min-height: 400px;
-}
-
-/* قسم الضمانات (ثقة، سرعة، أمان، جودة) */
-.guarantees {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin: 60px 0 40px 0;
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.guarantee-item {
-  flex: 1 1 45%;
-  max-width: 45%;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.3rem;
-  box-shadow: 0 0 15px #8D00FF;
-}
-
-/* الصور 4 في صف واحد */
-.images-row {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1024px;
-  margin: 40px auto 80px auto;
-}
-
-.images-row img {
-  width: 200px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 0 20px #8D00FF;
+.menu-btn span {
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 4px 0;
 }
