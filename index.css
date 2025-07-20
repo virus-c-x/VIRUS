@@ -1,8 +1,10 @@
-/* Reset and base */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 body {
@@ -16,47 +18,38 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: rgba(10, 5, 20, 0.5);
 }
-
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #a855f7, #6d28d9);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #9333ea, #5b21b6);
 }
 
-/* Top bar styling */
-.top-bar {
+/* Header Bar */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, #8D00FF, #01010B);
   padding: 10px 20px;
+  background: linear-gradient(180deg, #8D00FF 0%, #01010B 100%);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Logo left and center */
 .logo-left img,
 .logo-center img {
   height: 50px;
   object-fit: contain;
 }
 
-/* Menu button */
-.menu-button {
-  color: #01010B;
-}
-
-/* Menu hamburger styles */
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  display: none;
-  visibility: hidden;
-}
-
+/* Navigation toggle button */
 .bar {
   display: block;
   position: relative;
@@ -69,7 +62,7 @@ input[type="checkbox"] {
   position: absolute;
   width: 45px;
   height: 7px;
-  background: #f1faee;
+  background: #01010B;
   border-radius: 100px;
   display: inline-block;
   transition: 0.3s ease;
@@ -88,14 +81,20 @@ input[type="checkbox"] {
   bottom: 0;
 }
 
-input[type="checkbox"]:checked ~ span.top {
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked ~ .bar span.top {
   transform: rotate(45deg);
   transform-origin: top left;
   width: 48px;
   left: 5px;
 }
 
-input[type="checkbox"]:checked ~ span.bottom {
+input[type="checkbox"]:checked ~ .bar span.bottom {
   transform: rotate(-45deg);
   transform-origin: top left;
   width: 48px;
@@ -103,123 +102,145 @@ input[type="checkbox"]:checked ~ span.bottom {
   box-shadow: 0 0 10px #495057;
 }
 
-input[type="checkbox"]:checked ~ span.middle {
+input[type="checkbox"]:checked ~ .bar span.middle {
   transform: translateX(-20px);
   opacity: 0;
 }
 
-/* Banner fullscreen */
-.banner-section {
-  position: relative;
+/* Banner */
+.banner {
+  margin-top: 70px; /* because header fixed */
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-}
-
-.banner-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  background: url('./banner.jpg') no-repeat center center/cover;
+  position: relative;
 }
 
 /* Moving text "othmane" */
-.moving-text {
-  position: relative;
-  width: 100%;
-  background: black;
-  overflow: hidden;
-  height: 40px;
-}
-
-.moving-text p {
+.marquee-container {
   position: absolute;
-  white-space: nowrap;
-  color: #8D00FF;
-  font-weight: bold;
-  font-size: 24px;
-  animation: moveText 8s linear infinite;
   top: 50%;
+  left: 100%;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
   transform: translateY(-50%);
+  pointer-events: none;
 }
 
-@keyframes moveText {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -100%;
-  }
+.marquee-text {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #8D00FF;
+  animation: marquee 10s linear infinite;
+  user-select: none;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 /* Gradient background below banner */
-.intro {
-  padding: 30px;
-  background: linear-gradient(to bottom, #01010B, #8D00FF);
+.gradient-bg {
+  background: linear-gradient(180deg, #01010B 0%, #8D00FF 100%);
+  padding: 30px 20px;
+  position: relative;
   text-align: center;
-  font-size: 18px;
-  min-height: 150px;
+  color: white;
 }
 
-/* Guarantees layout */
+/* Profile image with glass effect */
+.profile-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background-image: url('./virusname.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* About me text */
+.about-me {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Guarantees Section */
 .guarantees {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background: #111;
-  padding: 20px;
-  gap: 20px;
-  max-width: 800px;
-  margin: 20px auto;
+  margin: 40px auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  color: white;
+  text-align: center;
 }
 
 .guarantee-item {
-  flex: 1 1 40%;
-  background: #222;
+  background: rgba(255, 255, 255, 0.1);
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(141, 0, 255, 0.5);
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
-/* Services */
+/* Services Section */
 .services {
   max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-}
-
-.services h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #8D00FF;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 25px;
 }
 
 .service-item {
-  background: #222;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(141, 0, 255, 0.5);
+  flex: 1 1 200px;
+  min-width: 200px;
+  text-align: center;
+  font-weight: 600;
 }
 
-/* Payments */
+/* Payment Methods Section */
 .payments {
   max-width: 900px;
-  margin: 30px auto 60px auto;
-  padding: 20px;
+  margin: 50px auto 100px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
 }
 
-.payments h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #8D00FF;
+.payment-method img {
+  max-height: 50px;
+  filter: drop-shadow(0 0 3px rgba(141, 0, 255, 0.8));
 }
 
-.payment-item {
-  background: #222;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .guarantees {
+    grid-template-columns: 1fr;
+  }
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+  .payments {
+    flex-direction: column;
+  }
 }
