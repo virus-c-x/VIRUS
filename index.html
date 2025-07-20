@@ -1,300 +1,73 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>VIRUS</title>
-<style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-
-  body, html {
-    height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #000;
-    color: white;
-    overflow-x: hidden;
-  }
-
-  /* الهيدر */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: linear-gradient(to bottom, #8D00FF, #01010B);
-    height: 60px;
-  }
-
-  header .logo-left,
-  header .logo-center {
-    height: 40px;
-    width: 40px;
-    background: #222;
-    border-radius: 6px;
-  }
-
-  header .logo-left img,
-  header .logo-center img {
-    height: 100%;
-    width: auto;
-  }
-
-  /* أيقونة التنقل */
-  header .nav-icon {
-    width: 30px;
-    height: 30px;
-    background: #01010B;
-    border-radius: 4px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* شكل أيقونة التنقل - خطوط */
-  header .nav-icon div {
-    width: 18px;
-    height: 3px;
-    background: #8D00FF;
-    margin: 3px 0;
-    border-radius: 2px;
-  }
-
-  /* البنر */
-  .banner {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background: url('banner.jpg') no-repeat center center/cover;
-  }
-
-  /* خط متحرك كلمة othmane */
-  .marquee-container {
-    position: absolute;
-    bottom: 20%;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .marquee-text {
-    display: inline-block;
-    white-space: nowrap;
-    color: #8D00FF;
-    font-weight: 900;
-    font-size: 4rem;
-    animation: marquee 10s linear infinite;
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-  /* خلفية مدرجة أسفل البنر */
-  .gradient-bg {
-    background: linear-gradient(to bottom, #01010B, #8D00FF);
-    padding: 40px 20px 60px;
-    position: relative;
-  }
-
-  /* صورة خلفية فوق التدرج */
-  .gradient-bg::before {
-    content: "";
-    background: url('virusname.png') no-repeat center center/contain;
-    opacity: 0.1;
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none;
-  }
-
-  /* نبذة تعريفية */
-  .about-me {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
-    z-index: 1;
-  }
-
-  /* قسم الجودة والثقة والسرعة والامان */
-  .guarantees {
-    margin-top: 60px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 40px 60px;
-    color: white;
-    position: relative;
-    z-index: 1;
-  }
-
-  .guarantee-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-
-  .guarantee-item img {
-    width: 40px;
-    height: 40px;
-  }
-
-  /* قسم الخدمات */
-  .services {
-    margin-top: 60px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-  }
-
-  .services h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 2rem;
-    color: #8D00FF;
-  }
-
-  .service-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .service-item {
-    background: rgba(255 255 255 / 0.1);
-    backdrop-filter: blur(6px);
-    padding: 20px;
-    width: 220px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 500;
-    box-shadow: 0 0 15px rgba(141, 0, 255, 0.3);
-  }
-
-  /* قسم طرق الدفع */
-  .payment-methods {
-    margin-top: 60px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: white;
-  }
-
-  .payment-methods h2 {
-    margin-bottom: 20px;
-    color: #8D00FF;
-  }
-
-  .payment-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-
-  .payment-icons img {
-    width: 60px;
-    height: auto;
-  }
-
-  /* ريسبونسف */
-  @media (max-width: 768px) {
-    header {
-      flex-wrap: wrap;
-      height: auto;
-      gap: 10px;
-      padding: 10px;
-    }
-    .services .service-list {
-      flex-direction: column;
-      align-items: center;
-    }
-    .guarantees {
-      grid-template-columns: 1fr;
-      gap: 20px 0;
-    }
-  }
-</style>
+<link rel="stylesheet" href="index.css" />
 </head>
 <body>
 
 <header>
-  <div class="logo-left">
-    <img src="logo.png" alt="Logo" />
+  <div class="header-left">
+    <!-- لو حابب تحط لوجو صغير -->
+    <div class="logo-placeholder">Logo</div>
   </div>
-  <div class="logo-center">
-    <img src="virusname.png" alt="Virus Name" />
+  <div class="header-center">
+    <img src="virusname.png" alt="Virus Name" class="virusname" />
   </div>
-  <div class="nav-icon" title="Navigation">
-    <div></div>
-    <div></div>
-    <div></div>
+  <div class="header-right">
+    <div class="menu-icon">&#9776;</div>
   </div>
 </header>
 
-<section class="banner">
-  <div class="marquee-container">
-    <span class="marquee-text">othmane</span>
-  </div>
+<section class="banner-section">
+  <img src="banner.jpg" alt="Banner" class="banner" />
+  <div class="scrolling-text">othmane</div>
 </section>
 
-<section class="gradient-bg">
-  <div class="about-me">
-    <p>هذا نبذة تعريفيه بسيطة عني يمكن تعديلها لاحقاً.</p>
-  </div>
-
-  <div class="guarantees">
-    <div class="guarantee-item">
-      <img src="trust.png" alt="Trust" />
-      <span>الثقة</span>
-    </div>
-    <div class="guarantee-item">
-      <img src="speed.png" alt="Speed" />
-      <span>السرعة</span>
-    </div>
-    <div class="guarantee-item">
-      <img src="security.png" alt="Security" />
-      <span>الأمان</span>
-    </div>
-    <div class="guarantee-item">
-      <img src="quality.png" alt="Quality" />
-      <span>الجودة</span>
-    </div>
-  </div>
-
-  <div class="services">
-    <h2>خدماتنا</h2>
-    <div class="service-list">
-      <div class="service-item">تصميم مواقع إلكترونية</div>
-      <div class="service-item">برمجة تطبيقات</div>
-      <div class="service-item">تحليل البيانات</div>
-      <div class="service-item">دعم فني 24/7</div>
-    </div>
-  </div>
-
-  <div class="payment-methods">
-    <h2>طرق الدفع المتاحة</h2>
-    <div class="payment-icons">
-      <img src="visa.png" alt="Visa" />
-      <img src="mastercard.png" alt="Mastercard" />
-      <img src="paypal.png" alt="PayPal" />
-      <img src="mada.png" alt="Mada" />
-    </div>
-  </div>
+<section class="intro-section">
+  <div class="background-overlay"></div>
+  <img src="logo.png" alt="Logo" class="background-logo" />
+  <p class="intro-text">
+    نبذة تعريفية عني هنا، ممكن تعدلها متى ما تحب.
+  </p>
 </section>
+
+<section class="guarantee-section">
+  <div class="guarantee-item">🔒 الأمان</div>
+  <div class="guarantee-item">⚡ السرعة</div>
+  <div class="guarantee-item">🤝 الثقة</div>
+  <div class="guarantee-item">⭐ الجودة</div>
+</section>
+
+<section class="services-section">
+  <h2>خدماتنا</h2>
+  <ul>
+    <li>تصميم مواقع</li>
+    <li>برمجة تطبيقات</li>
+    <li>استشارات تقنية</li>
+    <li>دعم فني مستمر</li>
+  </ul>
+</section>
+
+<section class="payment-section">
+  <h2>طرق الدفع المتاحة</h2>
+  <ul>
+    <li>فيزا</li>
+    <li>ماستر كارد</li>
+    <li>باي بال</li>
+    <li>تحويل بنكي</li>
+  </ul>
+</section>
+
+<footer>
+  <nav>
+    <a href="prices.html">الأسعار</a> |
+    <a href="packages.html">البكجات</a> |
+    <a href="contact.html">التواصل</a>
+  </nav>
+</footer>
 
 </body>
 </html>
